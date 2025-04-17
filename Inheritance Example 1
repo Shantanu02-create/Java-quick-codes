@@ -1,0 +1,18 @@
+interface Animal{
+	default void makeSound() {
+		
+	}
+}
+class Cat implements Animal{
+	public void makeSound() {
+		System.out.println("The cat tries to bark");
+	}
+}
+public class inheritance1{
+	public static void main(String[] args) {
+		Cat c= new Cat();
+		c.makeSound();
+		
+		
+	}
+}
