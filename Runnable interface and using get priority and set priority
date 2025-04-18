@@ -1,0 +1,28 @@
+class MyTask implements Runnable {
+    String threadName;
+
+    MyTask(String name) {
+        threadName = name;
+    }
+
+    public void run() {
+        System.out.println(threadName + " is running...");
+        System.out.println(threadName + " Priority: " + Thread.currentThread().getPriority());
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new MyTask("Thread-1"));
+        Thread t2 = new Thread(new MyTask("Thread-2"));
+        Thread t3 = new Thread(new MyTask("Thread-3"));
+
+        t1.setPriority(3); // Low priority
+        t2.setPriority(7); // Medium priority
+        t3.setPriority(10); // High priority
+
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
