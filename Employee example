@@ -1,0 +1,33 @@
+import java.util.*;
+abstract class Employee{
+	void work() {
+		
+	}
+	int getSalary(int rupees) {
+		return rupees;
+		
+	}
+}
+class HRManager extends Employee{
+	void work() {
+		System.out.println("I work as HR");
+	}
+	LinkedList addEmployees() {
+		LinkedList<String> emp= new LinkedList<String>();
+		emp.add("Employee 1");
+		emp.add("Employee 2");
+		emp.add("Employee 3");
+		emp.add("Employee 4");
+		emp.add("Employee 5");
+		return emp;
+	}
+	public class Office{
+		public static void main(String[] args) {
+			System.out.println("All details");
+			HRManager h=new HRManager();
+			h.work();
+			System.out.println("Salary"+h.getSalary(100000));
+			System.out.println("Employees"+h.addEmployees());
+		}
+	}
+}
