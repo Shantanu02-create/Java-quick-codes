@@ -1,0 +1,89 @@
+class Employee {
+    String name;
+    String address;
+    double salary;
+    String jobTitle;
+
+    double getBonus() {
+        return salary * 0.05;
+    }
+
+    void report() {
+        System.out.println(jobTitle + " report created.");
+    }
+
+    void manage() {
+        System.out.println(jobTitle + " managing project.");
+    }
+}
+
+class Manager extends Employee {
+    Manager() {
+        name = "Emp1";
+        address = "Address1";
+        salary = 80000;
+        jobTitle = "Manager";
+    }
+
+    double getBonus() {
+        return salary * 0.10;
+    }
+
+    void manage() {
+        System.out.println("Manager is handling team tasks.");
+    }
+}
+
+class Developer extends Employee {
+    Developer() {
+        name = "Emp2";
+        address = "Address2";
+        salary = 60000;
+        jobTitle = "Developer";
+    }
+
+    double getBonus() {
+        return salary * 0.08;
+    }
+
+    void manage() {
+        System.out.println("Developer is building features.");
+    }
+}
+
+class Programmer extends Employee {
+    Programmer() {
+        name = "Emp3";
+        address = "Address3";
+        salary = 50000;
+        jobTitle = "Programmer";
+    }
+
+    double getBonus() {
+        return salary * 0.07;
+    }
+
+    void manage() {
+        System.out.println("Programmer is writing code.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Manager m = new Manager();
+        Developer d = new Developer();
+        Programmer p = new Programmer();
+
+        m.report();
+        System.out.println("Bonus: " + m.getBonus());
+        m.manage();
+
+        d.report();
+        System.out.println("Bonus: " + d.getBonus());
+        d.manage();
+
+        p.report();
+        System.out.println("Bonus: " + p.getBonus());
+        p.manage();
+    }
+}
