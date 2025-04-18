@@ -1,0 +1,26 @@
+
+import java.util.Scanner;
+
+class TableThread extends Thread {
+    int number;
+
+    TableThread(int number) {
+        this.number = number;
+    }
+
+    public void run() {
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(number + " x " + i + " = " + (number * i));
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        new TableThread(num).start();
+}
+}
