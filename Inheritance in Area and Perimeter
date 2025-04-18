@@ -1,0 +1,35 @@
+class Shape {
+    int radius;
+    public double getPerimeter(int radius) {
+        return radius;
+    }
+
+    public double getArea(int radius) {
+        return radius;
+    }
+}
+
+class Circle extends Shape {
+    double radius;
+
+    Circle(double r) {
+        radius = r;
+    }
+
+    public double getPerimeter(int radius) {
+        return 2 * 3.14 * radius;
+    }
+
+    public double getArea(int radius) {
+        return 3.14 * radius * radius;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Circle c = new Circle(5);
+
+        System.out.println("Perimeter: " + c.getPerimeter());
+        System.out.println("Area: " + c.getArea());
+    }
+}
