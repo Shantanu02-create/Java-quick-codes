@@ -1,0 +1,20 @@
+abstract class VEhicle{
+	void drive() {
+		
+	}
+}
+class Car extends VEhicle{
+	void drive() {
+		System.out.println("Repairing a car");
+	}
+}
+
+public class Interface2 {
+	public static void main(String[] args) {
+		System.out.println("Output:");
+		Car c=new Car();
+		c.drive();
+	}
+	
+
+}
