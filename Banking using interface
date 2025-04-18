@@ -1,0 +1,46 @@
+
+interface BankOperations {
+    void deposit(double amount);
+    void withdraw(double amount);
+    void showBalance();
+}
+
+
+class BankAccount implements BankOperations {
+    String name;
+    double balance;
+
+    BankAccount(String name, double balance) {
+        this.name = name;
+        this.balance = balance;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println(amount + " deposited.");
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            System.out.println(amount + " withdrawn.");
+        } else {
+            System.out.println("Insufficient balance.");
+        }
+    }
+
+    public void showBalance() {
+        System.out.println("Balance: " + balance);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount("User", 1000);
+
+        account.showBalance();  // Show initial balance
+        account.deposit(500);   // Deposit money
+        account.withdraw(300);  // Withdraw money
+        account.showBalance();  // Show updated balance
+    }
+}
