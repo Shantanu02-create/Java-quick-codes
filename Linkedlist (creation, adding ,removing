@@ -1,0 +1,18 @@
+import java.util.LinkedList;
+
+public class Teams {
+  public static void main(String[] args) {
+    LinkedList<String> teams = new LinkedList<String>();
+    teams.add("INDIA");
+    teams.add("AFRICA");
+    teams.add("AUSTRALIA");
+    teams.add("ENGLAND");
+    System.out.println(teams);
+    System.out.println("After removing first"+teams.removeFirst());
+    System.out.println(teams);
+    System.out.println("After removing last:"+teams.removeLast());
+    System.out.println(teams);
+    
+    
+  }
+}
