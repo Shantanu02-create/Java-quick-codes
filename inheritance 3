@@ -1,0 +1,24 @@
+interface Animal{
+		
+	
+	default void move() {
+		
+	}
+}class Cheetah implements Animal{
+	public void move() {
+		System.out.println("Cheetah moves faster than other animals");
+	}
+}class Elephant implements Animal{
+	public void move() {
+		System.out.println("Elephant is slower as compared to Cheetah");
+		
+	}
+	
+}public class AnimalAdventure{
+	Cheetah c=new Cheetah();
+	Elephant e=new Elephant();
+	c.move();
+	e.move();
+	
+	
+}
