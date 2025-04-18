@@ -1,0 +1,84 @@
+class Vehicle {
+    String make;
+    String model;
+    int year;
+    String fuelType;
+
+    Vehicle(String make, String model, int year, String fuelType) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.fuelType = fuelType;
+    }
+
+    double getFuelEfficiency() {
+        return 0;
+    }
+
+    double getDistanceTraveled(double fuel) {
+        return fuel * getFuelEfficiency();
+    }
+
+    int getMaxSpeed() {
+        return 0;
+    }
+}
+
+class Car extends Vehicle {
+    Car(String make, String model, int year, String fuelType) {
+        super(make, model, year, fuelType);
+    }
+
+    double getFuelEfficiency() {
+        return 12;
+    }
+
+    int getMaxSpeed() {
+        return 150;
+    }
+}
+
+class Truck extends Vehicle {
+    Truck(String make, String model, int year, String fuelType) {
+        super(make, model, year, fuelType);
+    }
+
+    double getFuelEfficiency() {
+        return 6;
+    }
+
+    int getMaxSpeed() {
+        return 100;
+    }
+}
+
+class Motorcycle extends Vehicle {
+    Motorcycle(String make, String model, int year, String fuelType) {
+        super(make, model, year, fuelType);
+    }
+
+    double getFuelEfficiency() {
+        return 30;
+    }
+
+    int getMaxSpeed() {
+        return 120;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car c = new Car("Make1", "Model1", 2022, "Petrol");
+        Truck t = new Truck("Make2", "Model2", 2020, "Diesel");
+        Motorcycle m = new Motorcycle("Make3", "Model3", 2023, "Petrol");
+
+        System.out.println("Car distance (10L): " + c.getDistanceTraveled(10));
+        System.out.println("Car max speed: " + c.getMaxSpeed());
+
+        System.out.println("Truck distance (10L): " + t.getDistanceTraveled(10));
+        System.out.println("Truck max speed: " + t.getMaxSpeed());
+
+        System.out.println("Motorcycle distance (10L): " + m.getDistanceTraveled(10));
+        System.out.println("Motorcycle max speed: " + m.getMaxSpeed());
+    }
+}
