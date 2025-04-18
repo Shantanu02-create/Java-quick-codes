@@ -1,0 +1,33 @@
+import java.util.*;
+interface Shape{
+	default double getArea(int r) {
+		return r;
+	}
+}
+class Square implements Shape{
+	public double getArea(int s) {
+		int a=s*s;
+		return a;
+	}
+}
+class Circle implements Shape{
+	public double getArea(int r) {
+		double a=(3.14)*r*r;
+		return a;
+	}
+}
+public class Interface2{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		Square s=new Square();
+		Circle c=new Circle();
+		System.out.println("Enter radius:");
+		int ra=sc.nextInt();
+		System.out.println("Enter square:");
+		int sq=sc.nextInt();
+		System.out.println("Area of circle"+c.getArea(ra));
+		System.out.println("Area of square:"+s.getArea(sq));
+		
+		
+	}
+}
